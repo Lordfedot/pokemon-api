@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, CardMedia  } from "@mui/material";
+import { Card, CardContent, Typography, CardMedia,} from "@mui/material";
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -29,7 +29,7 @@ const PokemonInfo = () => {
     types,
   } = pokemonInfo;
   return (
-    <Card variant="outlined" sx={{ height: "100%", width: 400}}>
+    <Card variant="outlined" sx={{ height: "100%", width: "50%"}}>
       <CardContent>
         <Typography align="center" variant="h2">{toCapitalized(name)}</Typography>
         <CardMedia sx={{objectFit: "contain"}} component="img" height="194" src={back_default} alt={name}></CardMedia>

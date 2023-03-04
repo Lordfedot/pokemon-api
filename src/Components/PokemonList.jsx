@@ -25,10 +25,10 @@ const PokemonList = () => {
     <Container>
       <h1>Pokemon List</h1>
       <Box display="flex" gap="10%">
-        <Box display="flex" height="25%" flexDirection="column" gap="px">
+        <Box display="flex" alignItems="center" height="25%" width="50%" flexDirection="column">
           <List
             sx={{
-              minHeight: "25%",
+              height: "25%",
               display: "grid",
               gap: 2,
               gridTemplateRows: "repeat(4, 1fr)",
@@ -39,7 +39,7 @@ const PokemonList = () => {
               <PokemonItem key={name} name={name} />
             ))}
           </List>
-          <Pagination count={pageQty} onChange={(_,num)=> setPage(num)} />
+          <Pagination size="large" count={pageQty} onChange={(_,num)=> setPage(num)} />
         </Box>
         <Outlet />
       </Box>

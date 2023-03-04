@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { ListItem } from '@mui/material';
-import toCapitalized from "../Helpers/ToCapitalizied";
+import { ListItem, Typography } from '@mui/material';
+
 const PokemonItem = ({ name }) => {
   return (
     <ListItem sx = {{ height: 20}}>
       <Link to={`/${name}`}>
-        <p>{toCapitalized(name)}</p>
+        <Typography sx={{textTransform: "capitalize"}}>{name}</Typography>
       </Link>
     </ListItem>
   );

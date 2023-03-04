@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { fetchPokemonByName } from "../Services/Pokemons";
-import toCapitalized from "../Helpers/ToCapitalizied"
 
 const PokemonInfo = () => {
   const [pokemonInfo, setPokemonInfo] = useState();
@@ -31,13 +30,13 @@ const PokemonInfo = () => {
   return (
     <Card variant="outlined" sx={{ height: "100%", width: "50%"}}>
       <CardContent>
-        <Typography align="center" variant="h2">{toCapitalized(name)}</Typography>
+        <Typography sx={{textTransform: "capitalize"}} align="center" variant="h2">{name}</Typography>
         <CardMedia sx={{objectFit: "contain"}} component="img" height="194" src={back_default} alt={name}></CardMedia>
-        <Typography align="center" variant="h5">Ability list</Typography>
+        <Typography  align="center" variant="h5">Ability list</Typography>
         <ul>
           {abilities.map(({ ability: { name } }) => (
             <li key={name}>
-              <Typography variant="body1">{toCapitalized(name)}</Typography>
+              <Typography sx={{textTransform: "capitalize"}} variant="body1">{name}</Typography>
             </li>
           ))}
         </ul>
@@ -45,7 +44,7 @@ const PokemonInfo = () => {
         <ul>
           {types.map(({ type: { name } }) => (
             <li key={name}>
-              <Typography variant="body1">{toCapitalized(name)}</Typography>
+              <Typography sx={{textTransform: "capitalize"}} variant="body1">{name}</Typography>
             </li>
           ))}
         </ul>
